@@ -1,0 +1,105 @@
+:root {
+    --background-size: 200px; /* Adjust the size of the background image */
+    --background-spacing: 100px; /* Adjust the spacing between background images */
+}
+
+body {
+    background: url('images/fractal.gif') repeat;
+    background-size: var(--background-size) var(--background-size);
+    background-position: 0 0, var(--background-spacing) var(--background-spacing);
+    font-family: Arial, sans-serif;
+    color: white;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+header {
+    padding: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+h1, h2, h3 {
+    color: #fff;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.main-column {
+    background-color: rgba(0, 0, 0, 1); /* Adjust transparency here */
+    padding: 20px;
+    width: 33%;
+    margin-top: 20px;
+    border-radius: 0px;
+    z-index: 0;
+}
+
+.floating-image {
+    position: absolute;
+    height: auto;
+    border: 1px solid black;
+}
+
+.floating-image.left {
+    left: 80px;
+    width: 250px;
+    top: 200px;
+}
+.music-links {
+    list-style: none; /* Remove bullet points */
+    padding: 0;
+}
+
+.music-links li {
+    margin: 10px 0;
+}
+.music-links a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.floating-image.right {
+    right: 50px;
+    width: 250px;
+    top: 20px;
+}
+
+.floating-image.rightdown {
+    right: 60px;
+    width: 330px;
+    top: 400px;
+}
+
+.audio-block {
+    position: relative;
+}
+
+.audio-info {
+    position: absolute;
+    top: -8px;
+    right: 40px; /* Adjust as needed for spacing */
+    font-size: 0.8em; /* Adjust the font size */
+    color: #ffffff; /* Adjust the color */
+}
+
+audio {
+    margin: 10px;
+    width: 300px;
+}
+
+footer {
+    background-color: transparent;
+    padding: 10px;
+    margin-top: 20px;
+}
