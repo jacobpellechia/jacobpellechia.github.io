@@ -12,6 +12,7 @@ body {
     margin: 0;
     padding: 20px;
     text-align: center;
+    font-size: calc(0.5*2vw); /* Adjust font size based on viewport width */
 }
 
 header {
@@ -22,29 +23,43 @@ nav a {
     color: white;
     text-decoration: none;
     margin: 0 15px;
+    font-size: calc(0.65*2vw); /* Adjust font size based on viewport width */
 }
 
 nav a:hover {
     text-decoration: underline;
 }
 
-h1, h2, h3 {
+h1 {
     color: #fff;
+    font-size: calc(0.5*4.5vw); /* Adjust font size based on viewport width */
+}
+h2 {
+    color: #fff;
+    font-size: calc(0.5*3vw); /* Adjust font size based on viewport width */
+}
+h3 {
+    color: #fff;
+    font-size: calc(0.5*2.5vw); /* Adjust font size based on viewport width */
+}
+p{
+    color: #fff;
+    font-size: calc(0.5*2.8vw); /* Adjust font size based on viewport width */
 }
 
 .content {
     display: flex;
     justify-content: center;
     position: relative;
-    width: 100%
+    width: 100%;
 }
 
 .main-column {
     background-color: rgba(0, 0, 0, 1); /* Adjust transparency here */
     padding: 20px;
-    width: 33%;
+    width: 50%;
     margin-top: 20px;
-    border-radius: 0px;
+    border-radius: 0%;
     z-index: 0;
 }
 
@@ -55,7 +70,7 @@ h1, h2, h3 {
 }
 
 .floating-image.left {
-    left: 8%;
+    left: 1%;
     width: 20%;
     top: 25%;
 }
@@ -68,11 +83,12 @@ h1, h2, h3 {
 .floating-image.rightdown {
     right: 6%;
     width: 23%;
-    top: 82%;
+    top: 98%;
 }
 .music-links {
     list-style: none; /* Remove bullet points */
     padding: 0;
+    font-size: calc(0.65*2vw); /* Adjust font size based on viewport width */
 }
 
 .music-links li {
@@ -88,19 +104,26 @@ h1, h2, h3 {
 
 .audio-info {
     position: absolute;
-    top: -8px;
-    right: 0px; /* Adjust as needed for spacing */
-    font-size: 0.8em; /* Adjust the font size */
+    top: -9%;
+    right: 12%; /* Adjust as needed for spacing */
+    font-size: 1vw; /* Adjust the font size based on viewport width */
     color: #ffffff; /* Adjust the color */
 }
 
 audio {
     margin: 10px;
-    width: 300px;
+    height: 3vw;
+    width: 90%; /* Adjust width based on viewport width */
+    max-width: 300px; /* Ensure it doesn’t exceed a certain width */
 }
 
 footer {
-    background-color: transparent;
-    padding: 10px;
+    padding: 0%;
     margin-top: 20px;
+    font-size: 2vw;
+
+}
+footer span {
+    background-color: black;
+    color:rgb(0, 255, 251);
 }
