@@ -60,15 +60,15 @@ h1, h2, h3 {
     top: 25%;
 }
 .floating-image.right {
-    right: 5%;
+    right: 4%;
     width: 18%;
-    top: 10%;
+    top: 7%;
 }
 
 .floating-image.rightdown {
-    right: 7%;
-    width: 22%;
-    top: 80%;
+    right: 6%;
+    width: 23%;
+    top: 82%;
 }
 .music-links {
     list-style: none; /* Remove bullet points */
