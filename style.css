@@ -36,6 +36,7 @@ h1, h2, h3 {
     display: flex;
     justify-content: center;
     position: relative;
+    width: 100%
 }
 
 .main-column {
@@ -54,9 +55,20 @@ h1, h2, h3 {
 }
 
 .floating-image.left {
-    left: 80px;
-    width: 250px;
-    top: 200px;
+    left: 8%;
+    width: 20%;
+    top: 25%;
+}
+.floating-image.right {
+    right: 5%;
+    width: 18%;
+    top: 10%;
+}
+
+.floating-image.rightdown {
+    right: 7%;
+    width: 22%;
+    top: 80%;
 }
 .music-links {
     list-style: none; /* Remove bullet points */
@@ -69,17 +81,6 @@ h1, h2, h3 {
 .music-links a:hover {
     background-color: rgba(255, 255, 255, 0.2);
 }
-.floating-image.right {
-    right: 50px;
-    width: 250px;
-    top: 20px;
-}
-
-.floating-image.rightdown {
-    right: 60px;
-    width: 330px;
-    top: 400px;
-}
 
 .audio-block {
     position: relative;
@@ -88,7 +89,7 @@ h1, h2, h3 {
 .audio-info {
     position: absolute;
     top: -8px;
-    right: 40px; /* Adjust as needed for spacing */
+    right: 0px; /* Adjust as needed for spacing */
     font-size: 0.8em; /* Adjust the font size */
     color: #ffffff; /* Adjust the color */
 }
