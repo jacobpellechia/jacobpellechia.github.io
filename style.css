@@ -1,6 +1,6 @@
 :root {
-    --background-size: 200px; /* Adjust the size of the background image */
-    --background-spacing: 100px; /* Adjust the spacing between background images */
+    --background-size: 200px;
+    --background-spacing: 100px;
 }
 
 body {
@@ -12,7 +12,7 @@ body {
     margin: 0;
     padding: 20px;
     text-align: center;
-    font-size: calc(0.5*2vw); /* Adjust font size based on viewport width */
+    font-size: calc(0.5*2vw);
 }
 
 header {
@@ -20,31 +20,46 @@ header {
 }
 
 nav a {
-    color: white;
+    color: #00FFFF;
+    text-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF, 0 0 15px #00FFFF;
     text-decoration: none;
     margin: 0 15px;
-    font-size: calc(0.65*2vw); /* Adjust font size based on viewport width */
+    font-size: calc(0.65*2vw);
 }
 
 nav a:hover {
     text-decoration: underline;
+    text-shadow: 0 0 10px #00FFFF, 0 0 20px #00FFFF, 0 0 30px #00FFFF;
 }
 
 h1 {
     color: #fff;
-    font-size: calc(0.5*4.5vw); /* Adjust font size based on viewport width */
+    font-size: calc(0.5*4.5vw);
 }
+
 h2 {
     color: #fff;
-    font-size: calc(0.5*3vw); /* Adjust font size based on viewport width */
+    font-size: calc(0.5*3vw);
 }
+
 h3 {
     color: #fff;
-    font-size: calc(0.5*2.5vw); /* Adjust font size based on viewport width */
+    font-size: calc(0.5*2.5vw);
 }
-p{
+
+p {
     color: #fff;
-    font-size: calc(0.5*2.8vw); /* Adjust font size based on viewport width */
+    font-size: calc(0.5*2.8vw);
+}
+
+a {
+    color: #00FFFF; /* Neon blue color */
+    text-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF, 0 0 15px #00FFFF; /* Neon effect */
+}
+
+a:hover {
+    color: #00FFFF;
+    text-shadow: 0 0 10px #00FFFF, 0 0 20px #00FFFF, 0 0 30px #00FFFF; /* More intense neon effect on hover */
 }
 
 .content {
@@ -55,7 +70,7 @@ p{
 }
 
 .main-column {
-    background-color: rgba(0, 0, 0, 1); /* Adjust transparency here */
+    background-color: rgba(0, 0, 0, 1);
     padding: 20px;
     width: 50%;
     margin-top: 20px;
@@ -74,6 +89,7 @@ p{
     width: 20%;
     top: 25%;
 }
+
 .floating-image.right {
     right: 4%;
     width: 18%;
@@ -85,15 +101,17 @@ p{
     width: 23%;
     top: 98%;
 }
+
 .music-links {
-    list-style: none; /* Remove bullet points */
+    list-style: none;
     padding: 0;
-    font-size: calc(0.65*2vw); /* Adjust font size based on viewport width */
+    font-size: calc(0.8*2vw);
 }
 
 .music-links li {
     margin: 10px 0;
 }
+
 .music-links a:hover {
     background-color: rgba(255, 255, 255, 0.2);
 }
@@ -105,25 +123,103 @@ p{
 .audio-info {
     position: absolute;
     top: -9%;
-    right: 12%; /* Adjust as needed for spacing */
-    font-size: 1vw; /* Adjust the font size based on viewport width */
-    color: #ffffff; /* Adjust the color */
+    right: 12%;
+    font-size: 1vw;
+    color: #ffffff;
 }
 
 audio {
     margin: 10px;
     height: 3vw;
-    width: 90%; /* Adjust width based on viewport width */
-    max-width: 300px; /* Ensure it doesn’t exceed a certain width */
+    width: 90%;
+    max-width: 300px;
 }
 
 footer {
     padding: 0%;
     margin-top: 20px;
     font-size: 2vw;
-
 }
+
 footer span {
     background-color: black;
-    color:rgb(0, 255, 251);
+    color: rgb(0, 255, 251);
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    body {
+        font-size: calc(1*3vw);
+        padding: 10px;
+    }
+
+    nav a {
+        font-size: calc(0.65*3vw);
+        margin: 0 10px;
+    }
+
+    a {
+        color: #00FFFF; /* Neon blue color */
+        text-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF, 0 0 15px #00FFFF; /* Neon effect */
+    }
+    .music-links {
+        list-style: none;
+        padding: 0;
+        font-size: calc(1.4*2vw);
+    }
+    a:hover {
+        color: #00FFFF;
+        text-shadow: 0 0 10px #00FFFF, 0 0 20px #00FFFF, 0 0 30px #00FFFF; /* More intense neon effect on hover */
+    }
+
+    h1 {
+        font-size: calc(0.7*5vw);
+    }
+
+    h2 {
+        font-size: calc(0.5*4vw);
+    }
+
+    h3 {
+        font-size: calc(0.5*3.5vw);
+    }
+
+    p {
+        font-size: calc(0.7*3.8vw);
+    }
+
+    .main-column {
+        width: 40%;
+    }
+
+    .floating-image.left {
+        left: 1%;
+        width: 20%;
+        top: 25%;
+    }
+    
+    .floating-image.right {
+        right: 4%;
+        width: 18%;
+        top: 7%;
+    }
+    
+    .floating-image.rightdown {
+        right: 6%;
+        width: 23%;
+        top: 98%;
+    }
+
+    .audio-info {
+        font-size: 1.5vw;
+    }
+
+    audio {
+        height: 5vw;
+        width: 95%;
+    }
+
+    footer {
+        font-size: 3vw;
+    }
 }
