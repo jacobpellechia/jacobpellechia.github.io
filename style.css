@@ -119,16 +119,24 @@ a {
 
 
 /* Full width navigation */
+@media only screen and (min-width: 768px){
+    .full-width-nav {
+        display: flex;
+        justify-content: space-around;
+        margin: 50px 0;
+        padding: 20px 0;
+        background-position: center; /* center the background image */
+        background-size: 10% 100%;
+        background-image: url('images/waves.gif');
+        background-repeat: repeat-x;
+        /*background-color: #333;*/
+    }
+}
 .full-width-nav {
     display: flex;
     justify-content: space-around;
     margin: 50px 0;
     padding: 20px 0;
-    background-position: center; /* center the background image */
-    background-size: 10% 100%;
-    background-image: url('images/bird.gif');
-    background-repeat: repeat-x;
-    /*background-color: #333;*/
 }
 .full-width-nav img {
     object-fit: cover; /* ensure images cover the allocated space */
@@ -143,7 +151,7 @@ a {
     padding: 15px 30px;
     border: none;
     cursor: pointer;
-    font-size: 1.5vw;
+    font-size: 2.5vw;
     width: 100%;
     text-align: center;
 }
@@ -221,7 +229,11 @@ a {
 .stay-updated-section {
     display: flex;
     align-items: center;
+    background: url(images/bird.gif);
+    background-repeat: repeat;
+    background-size: calc(100% / 5) calc(100% / 3);
 }
+
 
 .left-image {
     flex: 1;
