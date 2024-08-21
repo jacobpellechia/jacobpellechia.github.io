@@ -1,0 +1,273 @@
+:root {
+    --background-size: 200px;
+    --background-spacing: 100px;
+}
+
+body {
+    background: url('images/fractal.gif') repeat;
+    background-size: var(--background-size) var(--background-size);
+    background-position: 0 0, var(--background-spacing) var(--background-spacing);
+    font-family: Arial, sans-serif;
+    color: white;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+    font-size: calc(0.5*2vw);
+}
+
+header {
+    padding: 10px;
+}
+
+nav a {
+    color: #00FFFF;
+    text-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF, 0 0 15px #00FFFF;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: calc(0.65*2vw);
+}
+
+nav a:hover {
+    text-decoration: underline;
+    text-shadow: 0 0 10px #00FFFF, 0 0 20px #00FFFF, 0 0 30px #00FFFF;
+}
+
+h1 {
+    color: #fff;
+    font-size: calc(0.5*4.5vw);
+}
+
+h2 {
+    color: #fff;
+    font-size: calc(0.5*3vw);
+}
+
+h3 {
+    color: #fff;
+    font-size: calc(0.5*2.5vw);
+}
+
+p {
+    color: #fff;
+    font-size: calc(0.5*2.8vw);
+}
+
+a {
+    color: #00FFFF; /* Neon blue color */
+    text-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF, 0 0 15px #00FFFF; /* Neon effect */
+}
+
+a:hover {
+    color: #00FFFF;
+    text-shadow: 0 0 10px #00FFFF, 0 0 20px #00FFFF, 0 0 30px #00FFFF; /* More intense neon effect on hover */
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+}
+
+.main-column {
+    background-color: rgba(0, 0, 0, 1);
+    padding: 20px;
+    width: 50%;
+    margin-top: 20px;
+    border-radius: 0%;
+    z-index: 0;
+}
+
+.floating-image {
+    position: absolute;
+    height: auto;
+    border: 1px solid black;
+}
+
+.floating-image.left {
+    left: 1%;
+    width: 20%;
+    top: 25%;
+}
+
+.floating-image.right {
+    right: 4%;
+    width: 18%;
+    top: 7%;
+}
+
+.floating-image.rightdown {
+    right: 6%;
+    width: 23%;
+    top: 98%;
+}
+
+.music-links {
+    list-style: none;
+    padding: 0;
+    font-size: calc(0.8*2vw);
+}
+
+.music-links li {
+    margin: 10px 0;
+}
+
+.music-links a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.audio-block {
+    position: relative;
+}
+
+.audio-info {
+    position: absolute;
+    top: -9%;
+    right: 12%;
+    font-size: 1vw;
+    color: #ffffff;
+}
+
+audio {
+    margin: 10px;
+    height: 3vw;
+    width: 90%;
+    max-width: 300px;
+}
+
+footer {
+    padding: 0%;
+    margin-top: 20px;
+    font-size: 2vw;
+}
+
+footer span {
+    background-color: black;
+    color: rgb(0, 255, 251);
+}
+/* Basic styles for the dropdown button */
+.dropbtn {
+    background-color: #3498db;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #2980b9;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    body {
+        font-size: calc(1*3vw);
+        padding: 10px;
+    }
+
+    nav a {
+        font-size: calc(0.65*3vw);
+        margin: 0 10px;
+    }
+
+    a {
+        color: #00FFFF; /* Neon blue color */
+        text-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF, 0 0 15px #00FFFF; /* Neon effect */
+    }
+    .music-links {
+        list-style: none;
+        padding: 0;
+        font-size: calc(1.4*2vw);
+    }
+    a:hover {
+        color: #00FFFF;
+        text-shadow: 0 0 10px #00FFFF, 0 0 20px #00FFFF, 0 0 30px #00FFFF; /* More intense neon effect on hover */
+    }
+
+    h1 {
+        font-size: calc(0.7*5vw);
+    }
+
+    h2 {
+        font-size: calc(0.5*4vw);
+    }
+
+    h3 {
+        font-size: calc(0.5*3.5vw);
+    }
+
+    p {
+        font-size: calc(0.7*3.8vw);
+    }
+
+    .main-column {
+        width: 40%;
+    }
+
+    .floating-image.left {
+        left: 1%;
+        width: 20%;
+        top: 25%;
+    }
+    
+    .floating-image.right {
+        right: 4%;
+        width: 18%;
+        top: 7%;
+    }
+    
+    .floating-image.rightdown {
+        right: 6%;
+        width: 23%;
+        top: 98%;
+    }
+
+    .audio-info {
+        font-size: 1.5vw;
+    }
+
+    audio {
+        height: 5vw;
+        width: 95%;
+    }
+
+    footer {
+        font-size: 3vw;
+    }
+}

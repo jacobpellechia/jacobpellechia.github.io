@@ -1,150 +1,72 @@
-:root {
-    --background-size: 200px;
-    --background-spacing: 100px;
-}
-
+/* General body styling */
 body {
-    background: url('images/fractal.gif') repeat;
-    background-size: var(--background-size) var(--background-size);
-    background-position: 0 0, var(--background-spacing) var(--background-spacing);
-    font-family: Arial, sans-serif;
+    background-color: black;
     color: white;
+    font-family: Arial, sans-serif;
     margin: 0;
-    padding: 20px;
+    padding: 0;
+}
+
+/* Sticky header styling */
+.sticky-header {
+    background-color: black;
+    color: white;
     text-align: center;
-    font-size: calc(0.5*2vw);
+    padding: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-header {
-    padding: 10px;
+.sticky-header h1 {
+    margin: 0;
+    padding-right: 200px; /* Space for the bear image to start repeating */
+    white-space: nowrap;
+    position: relative; /* Make h1 the reference point for the pseudo-element */
 }
-
-nav a {
-    color: #00FFFF;
-    text-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF, 0 0 15px #00FFFF;
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: calc(0.65*2vw);
-}
-
-nav a:hover {
-    text-decoration: underline;
-    text-shadow: 0 0 10px #00FFFF, 0 0 20px #00FFFF, 0 0 30px #00FFFF;
-}
-
-h1 {
-    color: #fff;
-    font-size: calc(0.5*4.5vw);
-}
-
-h2 {
-    color: #fff;
-    font-size: calc(0.5*3vw);
-}
-
-h3 {
-    color: #fff;
-    font-size: calc(0.5*2.5vw);
-}
-
-p {
-    color: #fff;
-    font-size: calc(0.5*2.8vw);
-}
-
 a {
     color: #00FFFF; /* Neon blue color */
     text-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF, 0 0 15px #00FFFF; /* Neon effect */
 }
 
-a:hover {
-    color: #00FFFF;
-    text-shadow: 0 0 10px #00FFFF, 0 0 20px #00FFFF, 0 0 30px #00FFFF; /* More intense neon effect on hover */
+/* Use a pseudo-element to add the background image */
+@media only screen and (min-width: 768px) {
+    .sticky-header::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: calc(42%);
+        right: 5%;
+        background-image: url('images/bear.gif');
+        background-repeat: repeat-x;
+        background-position: right center;
+        background-size: auto 70px; /* Adjust the height of the image */
+        z-index: -1; /* Ensure the image stays behind the header content */
+    }
 }
 
-.content {
-    display: flex;
-    justify-content: center;
-    position: relative;
-    width: 100%;
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity var(--fade-duration, 1s) ease-out, transform var(--fade-duration, 1s) ease-out;
 }
 
-.main-column {
-    background-color: rgba(0, 0, 0, 1);
-    padding: 20px;
-    width: 50%;
-    margin-top: 20px;
-    border-radius: 0%;
-    z-index: 0;
+/* Visible class */
+.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-.floating-image {
-    position: absolute;
-    height: auto;
-    border: 1px solid black;
+.sticky-header h1 {
+    margin: 0;
+    font-size: 2.5vw;
 }
 
-.floating-image.left {
-    left: 1%;
-    width: 20%;
-    top: 25%;
-}
-
-.floating-image.right {
-    right: 4%;
-    width: 18%;
-    top: 7%;
-}
-
-.floating-image.rightdown {
-    right: 6%;
-    width: 23%;
-    top: 98%;
-}
-
-.music-links {
-    list-style: none;
-    padding: 0;
-    font-size: calc(0.8*2vw);
-}
-
-.music-links li {
-    margin: 10px 0;
-}
-
-.music-links a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
-.audio-block {
-    position: relative;
-}
-
-.audio-info {
-    position: absolute;
-    top: -9%;
-    right: 12%;
-    font-size: 1vw;
-    color: #ffffff;
-}
-
-audio {
-    margin: 10px;
-    height: 3vw;
-    width: 90%;
-    max-width: 300px;
-}
-
-footer {
-    padding: 0%;
-    margin-top: 20px;
-    font-size: 2vw;
-}
-
-footer span {
-    background-color: black;
-    color: rgb(0, 255, 251);
-}
 /* Basic styles for the dropdown button */
 .dropbtn {
     background-color: #3498db;
@@ -165,10 +87,11 @@ footer span {
 .dropdown-content {
     display: none;
     position: absolute;
+    right: 0;
     background-color: #f9f9f9;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+    z-index: 10001;
 }
 
 /* Links inside the dropdown */
@@ -184,7 +107,7 @@ footer span {
     background-color: #f1f1f1;
 }
 
-/* Show the dropdown menu on hover */
+/* Show the dropdown menu when hovering over the dropdown container */
 .dropdown:hover .dropdown-content {
     display: block;
 }
@@ -194,80 +117,264 @@ footer span {
     background-color: #2980b9;
 }
 
-/* Media queries for responsiveness */
-@media (max-width: 768px) {
-    body {
-        font-size: calc(1*3vw);
+
+/* Full width navigation */
+.full-width-nav {
+    display: flex;
+    justify-content: space-around;
+    margin: 50px 0;
+    padding: 20px 0;
+    background-position: center; /* center the background image */
+    background-size: 10% 100%;
+    background-image: url('images/bird.gif');
+    background-repeat: repeat-x;
+    /*background-color: #333;*/
+}
+.full-width-nav img {
+    object-fit: cover; /* ensure images cover the allocated space */
+    margin: 10px; /* add some margin to create a gap between the images */
+    height: auto; /* allow image height to adjust proportionally */
+    max-height: 100vh; /* prevent the image height from exceeding the viewport height */
+}
+
+.full-width-nav button {
+    background-color: #444;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5vw;
+    width: 100%;
+    text-align: center;
+}
+
+.full-width-nav button:hover {
+    background-color: #555;
+}
+
+/* Section styling */
+.about-section, .stay-updated-section, .six-images-section {
+    padding: 50px;
+    text-align: center;
+    background-color: #222;
+}
+
+.about-section h2, .stay-updated-section h2 {
+    font-size: 2.5vw;
+    margin-bottom: 20px;
+}
+
+.about-section p, .stay-updated-section p {
+    font-size: 1.5vw;
+}
+
+.big-images-section {
+    display: flex;
+    justify-content: space-between;
+    background-image: url('./images/fractal.gif'); /* add your background image URL here */
+    background-size: cover; /* cover the entire container */
+    background-position: center; /* center the background image */
+    padding: 10px; /* add padding to create a gap between the images and the background */
+    height: auto; /* allow the height to adjust automatically */
+    aspect-ratio: 20 / 9; /* Set an aspect ratio for the section */
+    overflow: hidden; /* Prevent overflow issues */
+}
+
+.big-images-section img {
+    width: calc(50% - 20px); /* subtract some margin to avoid overflow */
+    object-fit: cover; /* ensure images cover the allocated space */
+    margin: 10px; /* add some margin to create a gap between the images */
+    height: auto; /* allow image height to adjust proportionally */
+    max-height: 100vh; /* prevent the image height from exceeding the viewport height */
+}
+
+
+.six-images-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns, each taking 1 fractional unit */
+    grid-template-rows: repeat(2, 1fr); /* 2 rows, each taking 1 fractional unit */
+    gap: 10px; /* add a 10px gap between images */
+  }
+  
+.six-images-section img {
+    width: 100%;
+    height: 100%; /* set height to 100% to fill the grid cell */
+    object-fit: cover; /* scale the image to cover the entire grid cell */
+}
+
+.big-photo-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 50px 0;
+}
+
+.photo-with-caption {
+    text-align: center;
+}
+
+.photo-with-caption h3 {
+    font-size: 2vw;
+    margin-top: 10px;
+}
+
+.stay-updated-section {
+    display: flex;
+    align-items: center;
+}
+
+.left-image {
+    flex: 1;
+}
+
+.left-image img {
+    width: 100%;
+    height: auto;
+}
+
+.right-text {
+    flex: 1;
+    padding: 20px;
+    text-align: left;
+}
+
+.right-text .email-form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.right-text .email-form input[type="email"] {
+    padding: 10px;
+    font-size: 1.2vw;
+    margin-bottom: 10px;
+}
+
+.right-text .email-form button {
+    padding: 10px;
+    font-size: 1.2vw;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.right-text .email-form button:hover {
+    background-color: #2980b9;
+}
+
+/* Scrolling banner */
+.scrolling-banner {
+    background-color: #000;
+    color: #00FFFF;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 2vw;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.scrolling-banner p {
+    display: inline-block;
+    animation: scroll-left 15s linear infinite;
+}
+
+@keyframes scroll-left {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+a:hover {
+    color: #00FFFF;
+    text-shadow: 0 0 10px #00FFFF, 0 0 20px #00FFFF, 0 0 30px #00FFFF; /* More intense neon effect on hover */
+}
+.music-links {
+    list-style: none;
+    padding: 0;
+    font-size: calc(0.8*2vw);
+}
+
+.music-links li {
+    margin: 10px 0;
+}
+
+.music-links a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Footer */
+footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+footer p {
+    font-size: 2vw;
+    margin-bottom: 20px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.social-links a {
+    font-size: 1.5vw;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #3498db;
+    border-radius: 5px;
+}
+
+.social-links a:hover {
+    background-color: #2980b9;
+}
+
+/* Media Query for smaller screens */
+@media only screen and (max-width: 768px) {
+    body, .sticky-header, .about-section, .stay-updated-section, .six-images-section, .full-width-nav, .big-photo-section, .footer, .scrolling-banner {
         padding: 10px;
+        margin: 0;
     }
 
-    nav a {
-        font-size: calc(0.65*3vw);
-        margin: 0 10px;
+    .about-section h2, .stay-updated-section h2, .photo-with-caption h3, .footer p, .social-links a, .scrolling-banner p {
+        font-size: 6vw; /* Increase the text size for smaller screens */
     }
 
-    a {
-        color: #00FFFF; /* Neon blue color */
-        text-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF, 0 0 15px #00FFFF; /* Neon effect */
+    .sticky-header {
+        justify-content: center;
     }
+
+    .sticky-header h1 {
+        font-size: 4.6vw;
+        margin-right: 0; /* Remove margin between h1 and dropbtn */
+        padding-right: 2vw; /* Remove padding to ensure they align */
+    }
+
+    .dropbtn {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .full-width-nav button {
+        font-size: 4vw;
+    }
+
+    .about-section p, .stay-updated-section p, .right-text .email-form input[type="email"], .right-text .email-form button {
+        font-size: 5vw;
+    }
+
     .music-links {
         list-style: none;
         padding: 0;
         font-size: calc(1.4*2vw);
     }
-    a:hover {
-        color: #00FFFF;
-        text-shadow: 0 0 10px #00FFFF, 0 0 20px #00FFFF, 0 0 30px #00FFFF; /* More intense neon effect on hover */
-    }
-
-    h1 {
-        font-size: calc(0.7*5vw);
-    }
-
-    h2 {
-        font-size: calc(0.5*4vw);
-    }
-
-    h3 {
-        font-size: calc(0.5*3.5vw);
-    }
-
-    p {
-        font-size: calc(0.7*3.8vw);
-    }
-
-    .main-column {
-        width: 40%;
-    }
-
-    .floating-image.left {
-        left: 1%;
-        width: 20%;
-        top: 25%;
-    }
-    
-    .floating-image.right {
-        right: 4%;
-        width: 18%;
-        top: 7%;
-    }
-    
-    .floating-image.rightdown {
-        right: 6%;
-        width: 23%;
-        top: 98%;
-    }
-
-    .audio-info {
-        font-size: 1.5vw;
-    }
-
-    audio {
-        height: 5vw;
-        width: 95%;
-    }
-
-    footer {
-        font-size: 3vw;
-    }
 }
+
